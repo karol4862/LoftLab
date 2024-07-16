@@ -1,0 +1,64 @@
+@import './base.css';
+
+@font-face {
+  font-family: 'FuturaCyrillic';
+  src: url('@/assets/fonts/FuturaCyrillicBook.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaCyrillic';
+  src: url('@/assets/fonts/FuturaCyrillicLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuturaCyrillic';
+  src: url('@/assets/fonts/FuturaCyrillicMedium.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fredoka';
+  src: url('@/assets/fonts/Fredoka.ttf') format('truetype');
+  font-weight: light;
+  font-style: normal;
+}
+
+html * {
+  font-family: 'FuturaCyrillic';
+  box-sizing: border-box;
+}
+
+#app {
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+.v-application {
+  width: 100vw;
+}
+.font-secondary {
+  font-family: 'Fredoka', sans-serif !important;
+  font-weight: 300;
+}
+
+.font-primary {
+  font-family: 'FuturaCyrillic', sans-serif !important;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+.v-expansion-panel-title {
+  padding: 24px !important;
+}
