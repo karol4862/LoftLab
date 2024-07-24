@@ -170,6 +170,9 @@ html {
   overflow-x: hidden !important;
 }
 @media (max-width: 961px) {
+  html .text-h4 {
+    font-size: 1.8rem !important;
+  }
   html {
     font-size: 18px !important
   }

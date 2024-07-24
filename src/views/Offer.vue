@@ -71,7 +71,7 @@
         </h3>
         <v-img :src="itemImage" width="400px" class="flex-grow-0 d-none d-md-block" cover></v-img>
         <v-sheet
-          min-width="480"
+          :width="$vuetify.display.mdAndDown ? 300 : 480"
           color="transparent"
           class="ml-md-12 pr-md-16 pb-16"
           :class="{

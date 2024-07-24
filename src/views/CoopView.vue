@@ -4,7 +4,7 @@
       class="bg-black d-flex justify-end"
       :class="[$vuetify.display.mdAndDown && 'flex-column']"
       :style="{ paddingTop: '76px' }"
-      height="80vh"
+      :height="$vuetify.display.mdAndDown ? '55vh' : '80vh'"
       width="100%"
     >
       <div
