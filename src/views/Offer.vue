@@ -2,26 +2,43 @@
   <div class="offer" :key="$route.params.id">
     <v-sheet
       class="bg-black d-flex justify-end"
+      :class="{
+        'flex-column': $vuetify.display.mdAndDown
+      }"
       :style="{ paddingTop: '76px' }"
-      height="80vh"
+      min-height="80vh"
       width="100%"
     >
-      <div class="pa-8 d-flex flex-column w-50 text-wrapper">
-        <span class="text-uppercase text-caption font-primary text-light-gray"
+      <div
+        class="pa-8 d-flex flex-column text-wrapper"
+        :class="{
+          'w-100': $vuetify.display.mdAndDown,
+          'w-50': !$vuetify.display.mdAndDown
+        }"
+      >
+        <span class="text-uppercase text-caption font-primary text-light-gray mb-8"
           >Strona główna / Oferta / {{ layout.title }}</span
         >
         <div class="flex-grow-1 d-flex flex-column justify-center mb-14">
           <h2 class="font-secondary text-h4 font-weight-light font-secondary text-uppercase">
             {{ layout.title }}
           </h2>
-          <p class="mt-6 ml-16">
+          <p class="mt-6 ml-md-16">
             {{ layout.description }}
           </p>
         </div>
       </div>
-      <v-img :src="layout.titleImage" class="" max-width="50vw" height="100%" cover></v-img>
+      <v-img
+        :src="layout.titleImage"
+        :class="{
+          'w-100': $vuetify.display.mdAndDown,
+          'w-50': !$vuetify.display.mdAndDown
+        }"
+        height="100%"
+        cover
+      ></v-img>
     </v-sheet>
-    <section class="py-16 products-review">
+    <section class="py-16 products-review pb-0 pb-md-16">
       <h3 class="text-h4 font-weight-light font-secondary text-uppercase text-center">
         Zobacz nasze realizacje
       </h3>
@@ -38,13 +55,26 @@
         <v-carousel-item v-for="image in layout.images" :src="image" cover></v-carousel-item>
       </v-carousel>
     </section>
-    <section class="bg-gray-background py-16 contact-form">
-      <div class="contact-wrapper d-flex flex-wrap">
+    <section class="bg-gray-background py-16 contact-form px-6 px-md-0">
+      <div
+        class="contact-wrapper d-flex flex-wrap align-center"
+        :class="{
+          'flex-column': $vuetify.display.mdAndDown
+        }"
+      >
         <h3 class="text-h4 font-weight-light font-secondary text-uppercase w-100 mb-12">
           Potrzebujesz wyceny?
         </h3>
-        <v-img :src="itemImage" width="400px" class="flex-grow-0" cover></v-img>
-        <v-sheet width="480" color="transparent" class="ml-12 pr-16 border-e-sm">
+        <v-img :src="itemImage" width="400px" class="flex-grow-0 d-none d-md-block" cover></v-img>
+        <v-sheet
+          width="480"
+          color="transparent"
+          class="ml-md-12 pr-md-16 pb-16"
+          :class="{
+            'border-e-sm': !$vuetify.display.mdAndDown,
+            'border-b-sm': $vuetify.display.mdAndDown
+          }"
+        >
           <v-form @submit.prevent="submit">
             <v-text-field
               label="Imię i Nazwisko"
@@ -66,7 +96,7 @@
             <v-btn color="black" block type="submit">Wyślij zapytanie</v-btn>
           </v-form>
         </v-sheet>
-        <v-sheet class="ml-16 d-flex flex-column justify-center" color="transparent">
+        <v-sheet class="ml-md-16 mt-16 d-flex flex-column justify-center" color="transparent">
           <h4 class="text-h5 font-weight-light font-secondary text-wrap">
             Lub skontaktuj się z
             <br />

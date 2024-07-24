@@ -31,6 +31,10 @@
           cols="12"
           lg="5"
           class="pa-16 d-flex align-center border-s-md border-light-gray border-opacity-75"
+          :class="{
+            'justify-center': $vuetify.display.mdAndDown,
+            'border-t-sm': $vuetify.display.mdAndDown
+          }"
         >
           <v-sheet class="d-flex flex-column justify-center" color="transparent">
             <h4 class="text-h5 font-weight-light font-secondary text-wrap">

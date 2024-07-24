@@ -5,7 +5,14 @@
         <v-sheet height="100%" width="100vw">
           <v-img :src="itemImage" height="100%" width="100%" cover></v-img>
           <div class="content-carousel">
-            <div>
+            <div
+              class="d-flex flex-column"
+              :class="{
+                'align-center': $vuetify.display.mdAndDown,
+                'justify-start': $vuetify.display.mdAndDown
+              }"
+            >
+              '
               <span> meble do kuchni </span>
               <h2 class="text-uppercase font-secondary mt-2 mb-6">Blaty kuchenne na wymiar</h2>
               <v-btn
@@ -24,7 +31,13 @@
         <v-sheet height="100%" width="100vw">
           <v-img :src="itemImage2" height="100%" width="100%" cover></v-img>
           <div class="content-carousel reverse">
-            <div>
+            <div
+              class="d-flex flex-column"
+              :class="{
+                'align-center': $vuetify.display.mdAndDown,
+                'justify-start': $vuetify.display.mdAndDown
+              }"
+            >
               <span> meble do kuchni </span>
               <h2 class="text-uppercase font-secondary mt-2 mb-6">Krzesła barowe</h2>
               <v-btn
@@ -43,7 +56,13 @@
         <v-sheet height="100%" width="100vw">
           <v-img :src="itemImage3" height="100%" width="100%" cover></v-img>
           <div class="content-carousel">
-            <div>
+            <div
+              class="d-flex flex-column"
+              :class="{
+                'align-center': $vuetify.display.mdAndDown,
+                'justify-start': $vuetify.display.mdAndDown
+              }"
+            >
               <span> meble do kuchni </span>
               <h2 class="text-uppercase font-secondary mt-2 mb-6">Stoły do jadalni</h2>
               <v-btn
@@ -62,7 +81,13 @@
         <v-sheet height="100%" width="100vw">
           <v-img :src="itemImage4" height="100%" width="100%" cover></v-img>
           <div class="content-carousel reverse">
-            <div>
+            <div
+              class="d-flex flex-column"
+              :class="{
+                'align-center': $vuetify.display.mdAndDown,
+                'justify-start': $vuetify.display.mdAndDown
+              }"
+            >
               <span> meble do kuchni </span>
               <h2 class="text-uppercase font-secondary mt-2 mb-6">Stoliki kawowe</h2>
               <v-btn
@@ -85,7 +110,7 @@
           Rzeszów
         </span>
         <h2 class="text-uppercase w-100 font-secondary mt-2">Producent mebli</h2>
-        <div class="d-flex">
+        <div class="d-flex" :class="{ 'flex-column': $vuetify.display.mdAndDown }">
           <h2 class="text-uppercase font-secondary text-no-wrap mr-6">Na wymiar</h2>
           <span class="mt-1">
             Od 30 lat zajmujemy się projektowaniem, produkcją i montażem mebli na wymiar. Obecnie
@@ -101,19 +126,38 @@
       </div>
     </section>
     <section class="d-flex justify-center align-center bg-gray-background py-16">
-      <div class="image-wrapper d-flex">
-        <div style="height: 520px" class="d-flex flex-column">
-          <h2 class="w-100 text-no-wrap font-secondary text-uppercase mr-14">Szukaj produktów</h2>
-          <h2 class="font-secondary w-100 font-secondary text-uppercase">według kategorii</h2>
+      <div
+        class="image-wrapper d-flex"
+        :class="{
+          'flex-column': $vuetify.display.mdAndDown
+        }"
+      >
+        <div
+          :style="$vuetify.display.mdAndDown ? '' : 'height: 520px'"
+          class="d-flex"
+          :class="{
+            'flex-column': !$vuetify.display.mdAndDown
+          }"
+        >
+          <h2 class="w-100 text-no-wrap font-secondary text-uppercase mr-14 mb-4">
+            Szukaj produktów <br />
+            według kategorii
+          </h2>
           <v-spacer></v-spacer>
-          <div>
+          <div class="d-flex align-center">
             <v-btn icon="mdi-arrow-left" variant="text" @click="prev"></v-btn>
             |
             <v-btn icon="mdi-arrow-right" variant="text" @click="next"></v-btn>
           </div>
         </div>
 
-        <carousel :items-to-show="3.5" index="0" autoplay="6000" wrapAround ref="myCarousel">
+        <carousel
+          :items-to-show="$vuetify.display.mdAndDown ? 2 : 3.5"
+          index="0"
+          autoplay="6000"
+          wrapAround
+          ref="myCarousel"
+        >
           <slide index="0">
             <v-sheet height="520px" width="370px" class="mx-1">
               <v-img width="100%" height="100%" :src="carouselImage1" cover></v-img>
@@ -152,7 +196,12 @@
       </div>
     </section>
     <section class="gallery-section pa-12">
-      <div class="gallery-wrapper d-flex justify-space-between mx-auto my-12">
+      <div
+        class="gallery-wrapper d-flex justify-space-between align-center mx-auto my-12"
+        :class="{
+          'flex-column': $vuetify.display.mdAndDown
+        }"
+      >
         <div class="gallery-item pt-16">
           <img :src="galleryImage1" width="240px" height="240px" cover class="mb-8" />
           <h4 class="text-h5 text-uppercase text-dark-gray font-secondary text-center">
@@ -252,6 +301,29 @@ export default {
 
 <style scoped>
 /* Style specyficzne dla tej strony */
+@media (max-width: 961px) {
+  .content-carousel {
+    width: 100% !important;
+    padding-bottom: 100px;
+    text-shadow: 1px 1px 4px #000000;
+  }
+  .content-carousel::before {
+    background-color: transparent !important;
+    backdrop-filter: blur(0) !important;
+  }
+
+  .text-section {
+    padding: 60px 16px;
+  }
+
+  .image-wrapper {
+    /* max-width: 1240px; */
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 0 16px;
+  }
+}
+
 .content-carousel {
   position: absolute;
   top: 0;
@@ -291,6 +363,11 @@ export default {
   max-width: 1300px;
 }
 
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .image-wrapper {
   /* max-width: 1240px; */
   margin-left: 20vw;

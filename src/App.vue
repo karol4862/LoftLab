@@ -1,9 +1,42 @@
 <template>
   <v-app>
+    <v-navigation-drawer v-if="$vuetify.display.mdAndDown" v-model="toggle" temporary>
+      <v-list>
+        <v-list-item class="pa-0">
+          <v-expansion-panels>
+            <v-expansion-panel
+            >
+            <v-expansion-panel-title class="py-1 px-4">
+              Oferta
+            </v-expansion-panel-title>
+              <v-expansion-panel-text>
+                <v-list>
+                  <v-list-item :to="{ name: 'Oferta', params: { id: 'blaty_kuchenne' } }">
+                    <v-list-item-title>Blaty kuchenne</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item :to="{ name: 'Oferta', params: { id: 'stoliki_kawowe' } }">
+                    <v-list-item-title>Stoliki kawowe</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item :to="{ name: 'Oferta', params: { id: 'krzesla_barowe' } }">
+                    <v-list-item-title>Krzesła barowe</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item :to="{ name: 'Oferta', params: { id: 'jadalnia' } }">
+                    <v-list-item-title>Stoły do jadalni</v-list-item-title>
+                  </v-list-item>
+                </v-list>
+              </v-expansion-panel-text>
+              
+            </v-expansion-panel>
+          </v-expansion-panels>
+        </v-list-item>
+        <v-list-item :to="{ name: 'Współpraca' }">Współpraca</v-list-item>
+        <v-list-item :to="{ name: 'Kontakt' }">Kontakt</v-list-item>
+      </v-list>
+    </v-navigation-drawer>
     <v-app-bar height="76" absolute class="border-b-sm border-light-gray border-opacity-75">
       <v-row class="app-row mx-auto">
         <v-col cols="5" style="height: 76px" class="d-flex align-center">
-          <v-menu>
+          <v-menu v-if="!$vuetify.display.mdAndDown"">
             <template v-slot:activator="{ props }">
               <v-btn text v-bind="props" class="text-uppercase">Oferta</v-btn>
             </template>
@@ -23,7 +56,7 @@
             </v-list>
           </v-menu>
           <!-- <v-btn text class="text-uppercase">Portfolio</v-btn> -->
-          <v-btn text class="text-uppercase" :to="{ name: 'Współpraca' }">Współpraca</v-btn>
+          <v-btn v-if="!$vuetify.display.mdAndDown" text class="text-uppercase" :to="{ name: 'Współpraca' }">Współpraca</v-btn>
         </v-col>
         <v-col cols="2" style="height: 76px" class="py-0 logo-wrapper">
           <div class="imagelogo-wrapper" style="height: 76px; width: 100px">
@@ -37,9 +70,10 @@
           </div>
         </v-col>
         <v-col cols="5" style="height: 76px" class="d-flex align-center justify-end py-0">
-          <div class="py-3 border-s-md border-opacity-75 h-100 d-flex align-center">
+          <div v-if="!$vuetify.display.mdAndDown" class="py-3 border-s-md border-opacity-75 h-100 d-flex align-center">
             <v-btn text :to="{ name: 'Kontakt' }" class="text-uppercase">Kontakt</v-btn>
           </div>
+          <v-btn v-else icon="mdi-menu" @click="toggleNavigator"></v-btn>
         </v-col>
       </v-row>
     </v-app-bar>
@@ -68,7 +102,10 @@
             </span>
           </div>
         </div>
-        <div class="border-s-md shortcuts-footer d-flex flex-grow-1 justify-space-evenly py-16">
+        <div class=" shortcuts-footer d-flex flex-grow-1 justify-space-evenly py-16" :class="{
+          'border-t-md': $vuetify.display.mdAndDown,
+          'border-s-md': !$vuetify.display.mdAndDown
+        }">
           <v-list lines="one" class="bg-background">
             <v-list-item class="mb-1">
               <span class="font-weight-bold"> Na skróty </span>
@@ -113,18 +150,33 @@ export default {
   data() {
     return {
       logo,
-      logoblack
+      logoblack,
+      toggle: false
     }
   },
   methods: {
     navigateTo(route) {
       this.$router.push({ name: route })
+    },
+    toggleNavigator() {
+      this.toggle = !this.toggle
     }
   }
 }
 </script>
 
 <style>
+@media (max-width: 961px) {
+  html {
+    font-size: 18px !important
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  .footer {
+    flex-direction: column
+  }
+}
 .v-toolbar__content {
   display: flex;
   justify-content: space-between;

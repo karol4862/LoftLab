@@ -2,11 +2,15 @@
   <div>
     <v-sheet
       class="bg-black d-flex justify-end"
+      :class="[$vuetify.display.mdAndDown && 'flex-column']"
       :style="{ paddingTop: '76px' }"
       height="80vh"
       width="100%"
     >
-      <div class="pa-8 d-flex flex-column w-50 text-wrapper">
+      <div
+        class="pa-8 d-flex flex-column w-50 text-wrapper"
+        :class="[$vuetify.display.mdAndDown ? 'w-100' : 'w-50']"
+      >
         <div class="flex-grow-1 d-flex flex-column justify-center mb-14">
           <h2 class="font-secondary text-h4 font-weight-light font-secondary text-uppercase">
             Jak współpracujemy <br />
@@ -21,7 +25,13 @@
           </p>
         </div>
       </div>
-      <v-img :src="itemImage" class="" max-width="50vw" height="100%" cover></v-img>
+      <v-img
+        :src="itemImage"
+        class=""
+        :max-width="$vuetify.display.mdAndDown ? '100vw' : '50vw'"
+        height="100%"
+        cover
+      ></v-img>
     </v-sheet>
     <section class="timeline py-16">
       <h3
@@ -32,17 +42,42 @@
       <p class="text-center mb-10">
         Od 30 lat zajmujemy się projektowaniem, produkcją i montażem mebli na wymiar.
       </p>
-      <v-tabs v-model="activeTab" fixed-tabs bg-color="transparent">
-        <template v-for="(item, index) in items" :key="item.title">
-          <v-tab variant="flat" base-color="transparent">
-            <div class="d-flex align-center">
-              <p class="text-medium-gray">0{{ index + 1 }}.</p>
-              <p>{{ item.title }}</p>
+      <v-timeline
+        :direction="$vuetify.display.mdAndDown ? 'vertical' : 'horizontal'"
+        :side="$vuetify.display.mdAndDown ? 'end' : 'start'"
+        density="compact"
+      >
+        <v-timeline-item v-for="(item, index) in items" :key="item.title">
+          <template v-slot:icon>
+            <v-btn
+              icon="mdi-circle"
+              size="x-small"
+              color="gray-background"
+              class="text-medium-gray"
+              @click="activeTab = index"
+            ></v-btn>
+          </template>
+
+          <p v-if="!$vuetify.display.mdAndDown">{{ item.title }}</p>
+
+          <v-sheet
+            v-else
+            color="transparent"
+            class="d-flex justify-center window-wrapper mx-auto flex-column"
+          >
+            <div class="d-flex align-center mb-2">
+              <p class="text-h2 text-light-gray mr-4">0{{ index + 1 }}</p>
+              <p class="text-h4 font-weight-light text-uppercase font-secondary">
+                {{ item.title }}
+              </p>
             </div>
-          </v-tab>
-        </template>
-      </v-tabs>
-      <v-window v-model="activeTab" class="pa-10">
+            <p>
+              {{ item.text }}
+            </p>
+          </v-sheet>
+        </v-timeline-item>
+      </v-timeline>
+      <v-window v-model="activeTab" class="pa-10" v-if="!$vuetify.display.mdAndDown">
         <template v-for="(item, index) in items" :key="index">
           <v-window-item :value="index">
             <v-sheet
@@ -149,6 +184,11 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width: 961px) {
+  .timeline {
+    padding: 0 20px;
+  }
+}
 .text-wrapper {
   max-width: 750px;
 }
