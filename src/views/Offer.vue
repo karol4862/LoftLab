@@ -45,7 +45,11 @@
       <h3 class="text-h4 font-weight-light font-secondary text-uppercase text-center mb-12">
         Blaty kuchenne
       </h3>
-      <v-carousel height="700px" hide-delimiters :key="layout.images.length">
+      <v-carousel
+        :height="$vuetify.display.mdAndDown ? '400px' : '700px'"
+        hide-delimiters
+        :key="layout.images.length"
+      >
         <template #next="{ props }">
           <v-btn v-bind="props" icon="mdi-arrow-right" color="white"></v-btn>
         </template>
@@ -67,7 +71,7 @@
         </h3>
         <v-img :src="itemImage" width="400px" class="flex-grow-0 d-none d-md-block" cover></v-img>
         <v-sheet
-          width="480"
+          min-width="480"
           color="transparent"
           class="ml-md-12 pr-md-16 pb-16"
           :class="{

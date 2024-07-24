@@ -66,8 +66,8 @@
             class="d-flex justify-center window-wrapper mx-auto flex-column"
           >
             <div class="d-flex align-center mb-2">
-              <p class="text-h2 text-light-gray mr-4">0{{ index + 1 }}</p>
-              <p class="text-h4 font-weight-light text-uppercase font-secondary">
+              <p class="text-h4 text-md-h2 text-light-gray mr-4">0{{ index + 1 }}</p>
+              <p class="text-body text-md-h4 font-weight-light text-uppercase font-secondary">
                 {{ item.title }}
               </p>
             </div>

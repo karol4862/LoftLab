@@ -35,7 +35,7 @@
     </v-navigation-drawer>
     <v-app-bar height="76" absolute class="border-b-sm border-light-gray border-opacity-75">
       <v-row class="app-row mx-auto">
-        <v-col cols="5" style="height: 76px" class="d-flex align-center">
+        <v-col cols="2" lg="5" style="height: 76px" class="d-flex align-center">
           <v-menu v-if="!$vuetify.display.mdAndDown"">
             <template v-slot:activator="{ props }">
               <v-btn text v-bind="props" class="text-uppercase">Oferta</v-btn>
@@ -58,8 +58,8 @@
           <!-- <v-btn text class="text-uppercase">Portfolio</v-btn> -->
           <v-btn v-if="!$vuetify.display.mdAndDown" text class="text-uppercase" :to="{ name: 'Współpraca' }">Współpraca</v-btn>
         </v-col>
-        <v-col cols="2" style="height: 76px" class="py-0 logo-wrapper">
-          <div class="imagelogo-wrapper" style="height: 76px; width: 100px">
+        <v-col cols="8" lg="2" style="height: 76px" class="py-0 logo-wrapper text-center">
+          <div class="imagelogo-wrapper mx-auto" style="height: 76px; width: 100px">
             <v-img
               :src="logo"
               height="100"
@@ -69,11 +69,11 @@
             ></v-img>
           </div>
         </v-col>
-        <v-col cols="5" style="height: 76px" class="d-flex align-center justify-end py-0">
+        <v-col cols="2" lg="5" style="height: 76px" class="d-flex align-center justify-end py-0">
           <div v-if="!$vuetify.display.mdAndDown" class="py-3 border-s-md border-opacity-75 h-100 d-flex align-center">
             <v-btn text :to="{ name: 'Kontakt' }" class="text-uppercase">Kontakt</v-btn>
           </div>
-          <v-btn v-else icon="mdi-menu" @click="toggleNavigator"></v-btn>
+          <v-btn v-else icon="mdi-menu" class="mr-2" @click="toggleNavigator"></v-btn>
         </v-col>
       </v-row>
     </v-app-bar>
@@ -166,6 +166,9 @@ export default {
 </script>
 
 <style>
+html {
+  overflow-x: hidden !important;
+}
 @media (max-width: 961px) {
   html {
     font-size: 18px !important
@@ -173,6 +176,10 @@ export default {
   h2 {
     font-size: 1.6rem;
   }
+  .footer-logo{
+    gap: 20px;
+  }
+  .footer-logo,
   .footer {
     flex-direction: column
   }
