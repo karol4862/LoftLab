@@ -4,11 +4,8 @@
       <v-list>
         <v-list-item class="pa-0">
           <v-expansion-panels>
-            <v-expansion-panel
-            >
-            <v-expansion-panel-title class="py-1 px-4">
-              Oferta
-            </v-expansion-panel-title>
+            <v-expansion-panel>
+              <v-expansion-panel-title class="py-1 px-4"> Oferta </v-expansion-panel-title>
               <v-expansion-panel-text>
                 <v-list>
                   <v-list-item :to="{ name: 'Oferta', params: { id: 'blaty_kuchenne' } }">
@@ -25,7 +22,6 @@
                   </v-list-item>
                 </v-list>
               </v-expansion-panel-text>
-              
             </v-expansion-panel>
           </v-expansion-panels>
         </v-list-item>
@@ -36,8 +32,8 @@
     <v-app-bar height="76" absolute class="border-b-sm border-light-gray border-opacity-75">
       <v-row class="app-row mx-auto">
         <v-col cols="2" lg="5" style="height: 76px" class="d-flex align-center">
-          <v-menu v-if="!$vuetify.display.mdAndDown"">
-            <template v-slot:activator="{ props }">
+          <v-menu v-if="!$vuetify.display.mdAndDown">
+            <template #activator="{ props }">
               <v-btn text v-bind="props" class="text-uppercase">Oferta</v-btn>
             </template>
             <v-list>
@@ -56,7 +52,13 @@
             </v-list>
           </v-menu>
           <!-- <v-btn text class="text-uppercase">Portfolio</v-btn> -->
-          <v-btn v-if="!$vuetify.display.mdAndDown" text class="text-uppercase" :to="{ name: 'Współpraca' }">Współpraca</v-btn>
+          <v-btn
+            v-if="!$vuetify.display.mdAndDown"
+            text
+            class="text-uppercase"
+            :to="{ name: 'Współpraca' }"
+            >Współpraca</v-btn
+          >
         </v-col>
         <v-col cols="8" lg="2" style="height: 76px" class="py-0 logo-wrapper text-center">
           <div class="imagelogo-wrapper mx-auto" style="height: 76px; width: 100px">
@@ -70,7 +72,10 @@
           </div>
         </v-col>
         <v-col cols="2" lg="5" style="height: 76px" class="d-flex align-center justify-end py-0">
-          <div v-if="!$vuetify.display.mdAndDown" class="py-3 border-s-md border-opacity-75 h-100 d-flex align-center">
+          <div
+            v-if="!$vuetify.display.mdAndDown"
+            class="py-3 border-s-md border-opacity-75 h-100 d-flex align-center"
+          >
             <v-btn text :to="{ name: 'Kontakt' }" class="text-uppercase">Kontakt</v-btn>
           </div>
           <v-btn v-else icon="mdi-menu" class="mr-2" @click="toggleNavigator"></v-btn>
@@ -102,10 +107,13 @@
             </span>
           </div>
         </div>
-        <div class=" shortcuts-footer d-flex flex-grow-1 justify-space-evenly py-16" :class="{
-          'border-t-md': $vuetify.display.mdAndDown,
-          'border-s-md': !$vuetify.display.mdAndDown
-        }">
+        <div
+          class="shortcuts-footer d-flex flex-grow-1 justify-space-evenly py-16"
+          :class="{
+            'border-t-md': $vuetify.display.mdAndDown,
+            'border-s-md': !$vuetify.display.mdAndDown
+          }"
+        >
           <v-list lines="one" class="bg-background">
             <v-list-item class="mb-1">
               <span class="font-weight-bold"> Na skróty </span>
@@ -174,17 +182,17 @@ html {
     font-size: 1.8rem !important;
   }
   html {
-    font-size: 18px !important
+    font-size: 18px !important;
   }
   h2 {
     font-size: 1.6rem;
   }
-  .footer-logo{
+  .footer-logo {
     gap: 20px;
   }
   .footer-logo,
   .footer {
-    flex-direction: column
+    flex-direction: column;
   }
 }
 .v-toolbar__content {
