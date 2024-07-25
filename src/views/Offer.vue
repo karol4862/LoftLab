@@ -79,6 +79,9 @@
             'border-b-sm': $vuetify.display.mdAndDown
           }"
         >
+          <v-alert color="success" class="mb-10" v-if="status === 'success'"
+            >Dziękujemy za Twoją wiadomość! Rozpatrzymy ją najszybciej, jak to możliwe.</v-alert
+          >
           <v-form @submit.prevent="submit">
             <v-text-field
               label="Imię i Nazwisko"

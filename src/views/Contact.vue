@@ -6,6 +6,9 @@
           <h3 class="font-secondary text-h4 font-weight-light font-secondary mt-10 mb-10">
             Napisz do nas korzystajać z formularza
           </h3>
+          <v-alert color="success" class="mb-10" v-if="messageSent"
+            >Dziękujemy za Twoją wiadomość! Rozpatrzymy ją najszybciej, jak to możliwe.</v-alert
+          >
           <v-form @submit.prevent="submit">
             <v-text-field
               label="Imię i Nazwisko"
@@ -66,7 +69,8 @@ export default {
         file: null // For handling file uploads
       },
       status: null,
-      result: null
+      result: null,
+      messageSent: false
     }
   },
   methods: {
@@ -95,6 +99,7 @@ export default {
 
         if (response.status === 200) {
           this.status = 'success'
+          this.messageSent = true
         } else {
           console.log(data) // Log for debugging, can be removed
           this.status = 'error'
