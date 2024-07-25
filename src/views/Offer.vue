@@ -42,11 +42,11 @@
       <h3 class="text-h4 font-weight-light font-secondary text-uppercase text-center">
         Zobacz nasze realizacje
       </h3>
-      <h3 class="text-h4 font-weight-light font-secondary text-uppercase text-center mb-12">
+      <h3 class="text-h4 font-weight-light font-secondary text-uppercase text-center mb-16">
         Blaty kuchenne
       </h3>
       <v-carousel
-        :height="$vuetify.display.mdAndDown ? '400px' : '700px'"
+        :height="$vuetify.display.mdAndDown ? '360px' : '700px'"
         hide-delimiters
         :key="layout.images.length"
       >

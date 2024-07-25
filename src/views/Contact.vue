@@ -1,7 +1,7 @@
 <template>
   <v-sheet color="black" class="pt-16">
     <section class="contact-section mx-auto mt-6">
-      <v-row>
+      <v-row class="my-0">
         <v-col cols="12" lg="7" class="pa-16">
           <h3 class="font-secondary text-h4 font-weight-light font-secondary mt-10 mb-10">
             Napisz do nas korzystajać z formularza

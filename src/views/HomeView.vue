@@ -12,9 +12,10 @@
                 'justify-start': $vuetify.display.mdAndDown
               }"
             >
-              '
               <span> meble do kuchni </span>
-              <h2 class="text-uppercase font-secondary mt-2 mb-6">Blaty kuchenne na wymiar</h2>
+              <h2 class="text-uppercase font-secondary mt-2 mb-6 text-center">
+                Blaty kuchenne na wymiar
+              </h2>
               <v-btn
                 variant="outlined"
                 class="px-10"
@@ -132,19 +133,13 @@
           'flex-column': $vuetify.display.mdAndDown
         }"
       >
-        <div
-          :style="$vuetify.display.mdAndDown ? '' : 'height: 520px'"
-          class="d-flex"
-          :class="{
-            'flex-column': !$vuetify.display.mdAndDown
-          }"
-        >
+        <div :style="$vuetify.display.mdAndDown ? '' : 'height: 520px'" class="d-flex flex-column">
           <h2 class="w-100 text-no-wrap font-secondary text-uppercase mr-14 mb-4">
             Szukaj produktów <br />
             według kategorii
           </h2>
           <v-spacer></v-spacer>
-          <div class="d-flex align-center">
+          <div class="d-flex align-center mb-6 mb-lg-0">
             <v-btn icon="mdi-arrow-left" variant="text" @click="prev"></v-btn>
             |
             <v-btn icon="mdi-arrow-right" variant="text" @click="next"></v-btn>
@@ -242,7 +237,7 @@
     </section>
     <section class="contact-section d-flex flex-column justify-center align-center text-background">
       <h3 class="text-h4 text-uppercase font-secondary">Umów się</h3>
-      <p class="text-h4 font-secondary text-light-gray font-weight-light">
+      <p class="text-h4 font-secondary text-light-gray font-weight-light text-center">
         na bezpłatny pomiar i wycenę
       </p>
       <v-btn class="px-12 mt-10" color="background" :to="{ name: 'Kontakt' }">Umów się!</v-btn>
