@@ -111,7 +111,7 @@
           </h4>
           <p class="mt-6 text-body-1">
             <v-icon>mdi-phone-outline</v-icon>
-            (+48) 530 357 063
+            (+48) 881 656 058
           </p>
         </v-sheet>
       </div>
@@ -133,7 +133,7 @@ export default {
       },
       itemImage: itemImage4,
       form: {
-        access_key: '6d71452e-88ee-4509-b1cd-1a7b1d5263c4',
+        access_key: 'e97825fd-0425-4296-b938-e7fe8c9a3cb7',
         subject: 'New Submission from Web3Forms',
         name: '',
         phone: '',
@@ -191,25 +191,76 @@ export default {
           this.status = ''
         }, 5000)
       }
+    },
+    async setLayout() {
+      switch (this.$route.params.id) {
+        case 'blaty_kuchenne':
+          this.layout = {
+            title: 'Blaty kuchenne',
+            titleImage: (await import('@/assets/images/item2.jpg')).default,
+            description:
+              'Odkryj piękno industrialnego designu z naszą kolekcją blatów kuchennych w stylu loftowym. Połączenie surowych materiałów i minimalistycznego wzornictwa sprawia, że nasze blaty idealnie wpisują się w nowoczesne wnętrza, nadając im niepowtarzalny charakter. Idealne dla tych, którzy cenią sobie zarówno estetykę, jak i funkcjonalność.',
+            images: [
+              (await import('@/assets/images/item1.png')).default,
+              (await import('@/assets/images/item2.jpg')).default,
+              (await import('@/assets/images/item4.jpg')).default
+            ]
+          }
+          break
+
+        case 'stoliki_kawowe':
+          this.layout = {
+            title: 'Stoliki kawowe',
+            titleImage: (await import('@/assets/images/item5.jpg')).default,
+            description:
+              'Nasze stoliki kawowe w stylu loftowym to doskonałe połączenie funkcjonalności i stylu. Wykonane z wysokiej jakości materiałów, takich jak surowe drewno, stal i beton, dodają każdemu wnętrzu wyjątkowego charakteru. Idealne dla miłośników minimalistycznego designu, którzy chcą stworzyć w swoim domu przestrzeń z nutą industrialnego uroku.',
+            images: [
+              (await import('@/assets/images/item3.jpg')).default,
+              (await import('@/assets/images/item5.jpg')).default
+            ]
+          }
+          break
+
+        case 'krzesla_barowe':
+          this.layout = {
+            title: 'Krzesła barowe',
+            titleImage: (await import('@/assets/images/item2.jpg')).default,
+            description:
+              'Nasze krzesła barowe w stylu loftowym łączą w sobie surowy design i wygodę, tworząc idealne rozwiązanie do wnętrz, które potrzebują charakteru i funkcjonalności. Wykonane z wysokiej jakości materiałów, takich jak metal, skóra i drewno, te krzesła dodadzą Twojemu wnętrzu industrialnego uroku i nowoczesnego stylu. Doskonale pasują zarówno do domowych kuchni, jak i przestrzeni komercyjnych.',
+            images: [
+              (await import('@/assets/images/item4.jpg')).default,
+              (await import('@/assets/images/item2.jpg')).default
+            ]
+          }
+          break
+
+        case 'jadalnia':
+          this.layout = {
+            title: 'Stoły do jadalni',
+            titleImage: (await import('@/assets/images/item2.jpg')).default,
+            description:
+              'Styl loftowy to połączenie surowości i elegancji. Nasze stoły do jadalni doskonale oddają tę ideę, oferując minimalistyczny design, który świetnie wpisuje się w nowoczesne aranżacje wnętrz. Proste linie, surowe materiały i staranne wykonanie sprawiają, że każdy stół staje się nie tylko funkcjonalnym meblem, ale także dekoracyjnym elementem, który przyciąga wzrok i dodaje przestrzeni niepowtarzalnego charakteru.',
+            images: [
+              (await import('@/assets/images/item4.jpg')).default,
+              (await import('@/assets/images/item2.jpg')).default
+            ]
+          }
+          break
+
+        default:
+          break
+      }
     }
   },
-  async mounted() {
-    switch (this.$route.params.id) {
-      case 'blaty_kuchenne':
-        this.layout = {
-          title: 'Blaty kuchenne',
-          titleImage: (await import('@/assets/images/item2.jpg')).default,
-          description: 'opis',
-          images: [
-            (await import('@/assets/images/item1.png')).default,
-            (await import('@/assets/images/item2.jpg')).default,
-            (await import('@/assets/images/item4.jpg')).default
-          ]
-        }
-        break
-
-      default:
-        break
+  mounted() {
+    this.setLayout()
+  },
+  watch: {
+    '$route.params': {
+      handler() {
+        this.setLayout()
+      },
+      deep: true
     }
   }
 }

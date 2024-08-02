@@ -95,14 +95,16 @@
           </div>
 
           <div class="company-info d-flex flex-column">
-            <span class="text-decoration-underline mb-3 ml-1">support@meble.pl</span>
+            <span class="text-decoration-underline mb-3 ml-1">LoftlabKontakt@gmail.com</span>
             <span>
               <v-icon size="small">mdi-map-marker-outline</v-icon>
-              Kwiatkowskiego 9D
+              Jana Olbrachta 94a
             </span>
-            <span class="ml-6">Rzeszów, 35-001</span>
+            <span class="ml-6">Rzeszów, 35-614</span>
             <span class="mt-2">
-              <v-icon class="mr-2">mdi-instagram</v-icon>
+              <v-icon class="mr-2" @click="goTo('https://www.instagram.com/loft___lab/')"
+                >mdi-instagram</v-icon
+              >
               <v-icon>mdi-facebook</v-icon>
             </span>
           </div>
@@ -168,6 +170,9 @@ export default {
     },
     toggleNavigator() {
       this.toggle = !this.toggle
+    },
+    goTo(url) {
+      window.location = url
     }
   }
 }

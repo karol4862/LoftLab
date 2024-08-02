@@ -47,7 +47,7 @@
             </h4>
             <p class="mt-6 text-body-1">
               <v-icon>mdi-phone-outline</v-icon>
-              (+48) 530 357 063
+              (+48) 881 656 058
             </p>
           </v-sheet>
         </v-col>
@@ -61,8 +61,8 @@ export default {
   data() {
     return {
       form: {
-        access_key: '6d71452e-88ee-4509-b1cd-1a7b1d5263c4',
-        subject: 'New Submission from Web3Forms',
+        access_key: 'e97825fd-0425-4296-b938-e7fe8c9a3cb7',
+        subject: 'Wycena LoftLab',
         name: '',
         phone: '',
         description: '',
