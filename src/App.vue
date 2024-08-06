@@ -29,7 +29,7 @@
         <v-list-item :to="{ name: 'Kontakt' }">Kontakt</v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar height="76" absolute class="border-b-sm border-light-gray border-opacity-75">
+    <v-app-bar height="76" absolute class="app-bar">
       <v-row class="app-row mx-auto">
         <v-col cols="2" lg="5" style="height: 76px" class="d-flex align-center">
           <v-menu v-if="!$vuetify.display.mdAndDown">
@@ -74,7 +74,7 @@
         <v-col cols="2" lg="5" style="height: 76px" class="d-flex align-center justify-end py-0">
           <div
             v-if="!$vuetify.display.mdAndDown"
-            class="py-3 border-s-md border-opacity-75 h-100 d-flex align-center"
+            class="py-3 border-s-md border-opacity-75 border-light-gray h-100 d-flex align-center"
           >
             <v-btn text :to="{ name: 'Kontakt' }" class="text-uppercase">Kontakt</v-btn>
           </div>
@@ -200,6 +200,24 @@ html {
     flex-direction: column;
   }
 }
+
+.app-bar::before {
+  content: '';
+  position: absolute;
+  width: calc(50% - 50px);
+  height: 1px;
+  background-color: #eeeeeed4;
+  top: 76px;
+}
+.app-bar::after {
+  content: '';
+  position: absolute;
+  width: calc(50% - 50px);
+  height: 1px;
+  right: 0;
+  background-color: #eeeeeed4;
+  top: 76px;
+}
 .v-toolbar__content {
   display: flex;
   justify-content: space-between;
@@ -221,7 +239,6 @@ html {
 
 .imagelogo-wrapper {
   margin-top: 1px;
-  border-bottom: 1px solid black;
 }
 .v-main {
   padding-top: 0 !important;

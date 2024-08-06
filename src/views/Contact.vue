@@ -41,7 +41,7 @@
         >
           <v-sheet class="d-flex flex-column justify-center" color="transparent">
             <h4 class="text-h5 font-weight-light font-secondary text-wrap">
-              Lub skontaktuj się z
+              Lub skontaktuj się
               <br />
               z nami bezpośrednio
             </h4>
