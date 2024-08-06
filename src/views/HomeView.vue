@@ -303,7 +303,7 @@ export default {
     text-shadow: 1px 1px 4px #000000;
   }
   .content-carousel::before {
-    background-color: transparent !important;
+    background-color: rgba(5, 5, 5, 0.411) !important;
     backdrop-filter: blur(0) !important;
   }
 
