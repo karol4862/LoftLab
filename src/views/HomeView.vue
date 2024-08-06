@@ -246,11 +246,11 @@
 </template>
 
 <script>
-import itemImage from '@/assets/images/item1.png'
+import itemImage from '@/assets/images/item1.webp'
 import itemImage2 from '@/assets/images/item2.jpg'
 import itemImage3 from '@/assets/images/item4.jpg'
 import itemImage4 from '@/assets/images/item3.jpg'
-import galleryImage1 from '@/assets/images/galleryitem1.png'
+import galleryImage1 from '@/assets/images/galleryitem1.webp'
 import galleryImage2 from '@/assets/images/galleryitem2.png'
 import galleryImage3 from '@/assets/images/galleryitem3.png'
 import galleryImage4 from '@/assets/images/galleryitem4.png'
@@ -379,7 +379,7 @@ export default {
 
 .inspiration-section {
   min-height: 55vh;
-  background-image: url('@/assets/images/item2.webp');
+  background-image: url('@/assets/images/item2.jpg');
   background-size: cover;
   background-position: center;
 }

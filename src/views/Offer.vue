@@ -201,7 +201,7 @@ export default {
             description:
               'Odkryj piękno industrialnego designu z naszą kolekcją blatów kuchennych w stylu loftowym. Połączenie surowych materiałów i minimalistycznego wzornictwa sprawia, że nasze blaty idealnie wpisują się w nowoczesne wnętrza, nadając im niepowtarzalny charakter. Idealne dla tych, którzy cenią sobie zarówno estetykę, jak i funkcjonalność.',
             images: [
-              (await import('@/assets/images/item1.png')).default,
+              (await import('@/assets/images/item1.webp')).default,
               (await import('@/assets/images/item2.jpg')).default,
               (await import('@/assets/images/item4.jpg')).default
             ]
