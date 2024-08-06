@@ -379,7 +379,7 @@ export default {
 
 .inspiration-section {
   min-height: 55vh;
-  background-image: url('@/assets/images/item2.jpg');
+  background-image: url('@/assets/images/item2.webp');
   background-size: cover;
   background-position: center;
 }
@@ -394,7 +394,7 @@ export default {
 
 .contact-section {
   min-height: 55vh;
-  background-image: url('@/assets/images/woodenbackground.png');
+  background-image: url('@/assets/images/woodenbackground.webp');
   background-size: cover;
   background-position: center;
 }
