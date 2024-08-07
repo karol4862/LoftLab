@@ -102,7 +102,7 @@
             </span>
             <span class="ml-6">Rzeszów, 35-614</span>
             <span class="mt-2">
-              <v-icon class="mr-2" @click="goTo('https://www.instagram.com/loft___lab/')"
+              <v-icon class="mr-2" @click="goTo('https://www.instagram.com/loftlab_official/')"
                 >mdi-instagram</v-icon
               >
               <v-icon>mdi-facebook</v-icon>
