@@ -114,14 +114,13 @@
         <div class="d-flex" :class="{ 'flex-column': $vuetify.display.mdAndDown }">
           <h2 class="text-uppercase font-secondary text-no-wrap mr-6">Na wymiar</h2>
           <span class="mt-1">
-            Od 30 lat zajmujemy się projektowaniem, produkcją i montażem mebli na wymiar. Obecnie
-            jesteśmy jednym z większych producentów mebli na Podkarpaciu. Stale poszerzamy ofertę
-            i unowocześniamy produkcję, aby sprostać wymaganiom naszych klientów. Jako firma
-            z wieloletnim doświadczeniem posiadamy wyjątkowo bogatą ofertę wzorów i materiałów.
-            Do każdego zamówienia podchodzimy indywidualnie oraz dostosowujemy wyposażenie
-            do budżetu odbiorcy. Działamy na podstawie nowoczesnego i szybkiego systemu produkcji,
-            a także sprawnej realizacji – od pierwszego spotkania, poprzez szczegółowo przygotowany
-            projekt, aż do montażu i odbioru u klienta.
+            Od 10 lat zajmujemy się projektowaniem, produkcją i montażem mebli na wymiar. Stale
+            poszerzamy ofertę i unowocześniamy produkcję, aby sprostać wymaganiom naszych klientów.
+            Jako firma z wieloletnim doświadczeniem posiadamy wyjątkowo bogatą ofertę wzorów
+            i materiałów. Do każdego zamówienia podchodzimy indywidualnie oraz dostosowujemy
+            wyposażenie do budżetu odbiorcy. Działamy na podstawie nowoczesnego i szybkiego systemu
+            produkcji, a także sprawnej realizacji – od pierwszego spotkania, poprzez szczegółowo
+            przygotowany projekt, aż do montażu i odbioru u klienta.
           </span>
         </div>
       </div>

@@ -40,7 +40,7 @@
         Etapy realizacji projektu
       </h3>
       <p class="text-center mb-10">
-        Od 30 lat zajmujemy się projektowaniem, produkcją i montażem mebli na wymiar.
+        Od 10 lat zajmujemy się projektowaniem, produkcją i montażem mebli na wymiar.
       </p>
       <v-timeline
         :direction="$vuetify.display.mdAndDown ? 'vertical' : 'horizontal'"
